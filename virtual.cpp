@@ -3,42 +3,49 @@ using namespace std;
 class shape
 {
     public:
-    double *h,*w;
-    //double *x,*y;
-    //x=&h;
-    //y=&w;
+    static double h,w;
+    
     void getdata()
     {
-        cout<<"\nenter x:";
-        cin>>*h;
-        cout<<"\nenter y:";
-        cin>>*w;
-       
+        
+        cout<<"\nenter height:";
+        cin>>h;
+        cout<<"\nenter width:";
+        cin>>w;
+        
+        //cout<<"\np="<<*p;
     }
     virtual void display_area()
     {
         cout<<"\nthe area is x*y for rectangle and 1/2*x*y for triangle";
     }
 };
+double shape::h;
+double shape::w;
+
+
+
+
 class rectan:public shape
 {
-    //double res1=(h)*(w);
+    
     public:
     void display_area()
     {
-        
-        cout<<"'nx="<<h<<"\ny="<<w;
-      //  cout<<"\nthe area of rectangle is "<<res1;
+        double res1=(shape::h)*(shape::w);
+        cout<<"\nheight="<<shape::h<<"\nwidth="<<shape::w;
+        cout<<"\nthe area of rectangle is "<<res1;
     }
 }; 
 class triagle:public shape
 {
-    //double res=(h)*(w)*(1/2);
+    
     public:
     void display_area()
-    {
-        cout<<"\nx="<<h<<"\ny="<<w;
-        //cout<<"\nthe area of triagle is "<<res;
+    {   
+        double res=(shape::h)*(shape::w)*(1.0/2.0);
+        cout<<"\nheight="<<shape::h<<"\nwidth="<<shape::w;
+        cout<<"\nthe area of triagle is "<<res;
     }
 }; 
 int main()
@@ -49,11 +56,7 @@ int main()
 
     cout<<"\nbase class";
     S.getdata();
-    S.display_area();
-    //S=R;
-    R.display_area();
-    /*s=&S;
-    s->getdata();
+    s=&S;
     s->display_area();
     cout<<"\nderieved1 class";
     s=&R;
@@ -61,6 +64,7 @@ int main()
     cout<<"\nderieved2 class";
     s=&T;
     s->display_area();
-    */
+    
+    
     return 0;
 }
