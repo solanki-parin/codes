@@ -2,21 +2,21 @@
 #include<cmath>
 using namespace std;
 
-int main()
+main()
 {
-    float n=1,r=0.11,P=1000,V,R,R1;
+    double n=1.0,r=0.11,P=1000.0,V,R,R1;
     int i;
     for(i=0;i<10;i++)
     {
-        R=(1+r);
+        R=(1.0+r);
         R1=pow(R,n);
         V=P*R1;
         cout<<"\nthe equation is "<<V;
         //cout<<"\n"<<P<<"\n"<<r<<"\n"<<n;
-        P+=1000;
+        P+=1000.0;
         r+=0.01;
-        n+=1;
-        V=P*(1+r);
+        n+=1.0;
+        V=P*(1.0+r);
         P=V;
 
     }
