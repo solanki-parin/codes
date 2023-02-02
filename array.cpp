@@ -9,7 +9,9 @@ int fun(int* a)//fun(int a[])no pointer
     cout<<a[i];
     sum+=a[i];
     }
+    
     return sum;
+    
 }
 int main()
 {
